@@ -57,3 +57,29 @@ end
 
  # print uniques([1,5,"frog", 2,1,3,"frog"])
 
+
+# -----------------------------------------------
+# Method 4: Primes 
+# -----------------------------------------------
+
+def is_prime?(number)
+
+	# Check to see if number is 0 or 1 since those are not considered prime numbers.
+	if (number == 1 || number == 0)
+		return false
+
+	# See number is divisible by any number lower than number other than 1
+	else
+		(2..number-1).each {|value| return false if number % value == 0}
+	end
+
+	true
+end
+
+
+# Tests
+# puts is_prime?(1)
+# puts is_prime?(29)
+# puts is_prime?(7)
+# puts is_prime?(14)
+
