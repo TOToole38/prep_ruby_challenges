@@ -83,3 +83,40 @@ end
 # puts is_prime?(7)
 # puts is_prime?(14)
 
+
+# -----------------------------------------------
+# Method 5: Rectangle Overlap
+# -----------------------------------------------
+# The first coordinate in a pair is the x-coordinate (across) and the second is the y-coordinate (up or down)
+	# rectangle = [[start_across, start_height], [end_across, end_height]]
+	# height = rectangle[1][1] - rectangle[0][1]
+	# width = rectangle[1][0] - rectangle[0][0]
+
+
+def overlap(rectangle1, rectangle2)
+	widthIntersect = false
+	heightIntersect = false
+
+	# Check to see if the rectangles overlap on the x axis
+	widthIntersect = true if (rectangle1[0][0]+1...rectangle1[1][0]).include?(rectangle2[0][0] || rectangle2[1][0])
+
+	# Check to see if the rectangles overlap on the y axis
+	heightIntersect = true if (rectangle1[0][1]+1...rectangle1[1][1]).include?(rectangle2[0][1] || rectangle2[1][1])
+
+	if (widthIntersect == true && heightIntersect == true)
+		return true
+	else
+		return false
+	end
+end
+
+
+# Tests
+# puts overlap( [[0,0],[3,3]], [[1,1],[4,5]] )
+# puts overlap( [ [0,0],[1,4] ], [ [1,1],[3,2] ] )
+
+
+
+
+
+
