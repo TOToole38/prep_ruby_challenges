@@ -7,9 +7,16 @@ def power(base, exponent)
 	exponent.times do 
 		result *= base 
 	end
-	return result
+	puts result
 end
 
+# Tests: 
+# power(3,4)
+	# => 81 # (3*3*3*3)
+# power(5,5)
+	# => 3125
+# power(8,2)
+	# => 64
 
 # -----------------------------------------------
 # Method 2: Factorial
@@ -22,8 +29,16 @@ def factorial (num)
 		product *= counter 
 		counter += 1
 	end
-	return product
+	print product
 end
+
+# Tests:
+# factorial(5)
+	# => 120 
+# factorial(4)
+	# => 24
+# factorial(7)
+	# => 5040
 
 # -----------------------------------------------
 # Method 3: Uniques
@@ -45,6 +60,7 @@ def uniques (itemArray)
 	return uniqueArray
 end
 
+# Test:
 # print uniques([1,5,"frog", 2,1,3,"frog"])
 
 
@@ -55,11 +71,34 @@ def uniques (itemArray)
 	uniqueArray = duplicateArray & itemArray
 end
 
+# Test: 
  # print uniques([1,5,"frog", 2,1,3,"frog"])
 
 
 # -----------------------------------------------
-# Method 4: Primes 
+# Method 4: Combinations
+# -----------------------------------------------
+
+def combinations(firstArray, secondArray)
+	newArray = []
+	firstArray.each do |firstString|
+		secondArray.each do |secondString|
+			newArray << "#{firstString}#{secondString}"
+		end
+	end
+	print newArray
+end
+
+
+# Tests: 
+# combinations(["on", "in"],["to", "rope"])
+# => [“onto”,”onrope”,”into”,”inrope”]
+
+# combinations(["i love ", "My pets include "],["Rambo", "Loretta", "Ever"])
+# => ["i love Rambo", "i love Loretta", "i love Ever", "My pets include Rambo", "My pets include Loretta", "My pets include Ever"]
+
+# -----------------------------------------------
+# Method 5: Primes 
 # -----------------------------------------------
 
 def is_prime?(number)
@@ -85,7 +124,7 @@ end
 
 
 # -----------------------------------------------
-# Method 5: Rectangle Overlap
+# Method 6: Rectangle Overlap
 # -----------------------------------------------
 # The first coordinate in a pair is the x-coordinate (across) and the second is the y-coordinate (up or down)
 	# rectangle = [[start_across, start_height], [end_across, end_height]]
@@ -111,7 +150,7 @@ def overlap(rectangle1, rectangle2)
 end
 
 
-# Tests
+# Tests:
 # puts overlap( [[0,0],[3,3]], [[1,1],[4,5]] )
 # puts overlap( [ [0,0],[1,4] ], [ [1,1],[3,2] ] )
 
